@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Search Browser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .search-container {
+            text-align: center;
+        }
+        .search-box {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .search-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .google-button {
+            background-color: #4285F4;
+            color: white;
+        }
+        .brave-button {
+            background-color: #FF4B00;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="query" class="search-box" placeholder="Type your query...">
+        <div class="search-buttons">
+            <button class="search-button google-button" onclick="search('google')">Search with Google</button>
+            <button class="search-button brave-button" onclick="search('brave')">Search with Brave</button>
+        </div>
+    </div>
+
+    <script>
+        function search(engine) {
+            const query = document.getElementById('query').value;
+            if (query.trim() === '') {
+                alert('Please enter a search query.');
+                return;
+            }
+            let url = '';
+            if (engine === 'google') {
+                url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            } else if (engine === 'brave') {
+                url = `https://search.brave.com/search?q=${encodeURIComponent(query)}`;
+            }
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
