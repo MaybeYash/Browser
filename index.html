@@ -34,6 +34,9 @@
             cursor: pointer;
             border: none;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .google-button {
             background-color: #4285F4;
@@ -43,14 +46,24 @@
             background-color: #FF4B00;
             color: white;
         }
+        .logo {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="search-container">
         <input type="text" id="query" class="search-box" placeholder="Type your query...">
         <div class="search-buttons">
-            <button class="search-button google-button" onclick="search('google')">Search with Google</button>
-            <button class="search-button brave-button" onclick="search('brave')">Search with Brave</button>
+            <button class="search-button google-button" onclick="search('google')">
+                <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" class="logo" alt="Google Logo">
+                Google
+            </button>
+            <button class="search-button brave-button" onclick="search('brave')">
+                <img src="https://brave.com/static-assets/images/brave_logo.svg" class="logo" alt="Brave Logo">
+                Brave
+            </button>
         </div>
     </div>
 
