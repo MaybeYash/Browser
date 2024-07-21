@@ -3,103 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram User Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-        }
-        .input-field {
-            margin-bottom: 20px;
-        }
-        .loading {
-            display: none;
-            margin-top: 20px;
-        }
-        .details {
-            display: none;
-            margin-top: 20px;
-        }
-        .loading-animation {
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Receive TON</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="input-field">
-            <label for="username">Enter Telegram Username:</label>
-            <input type="text" id="username" name="username">
-            <button onclick="fetchUserDetails()">Submit</button>
-        </div>
-        <div class="loading">
-            <div class="loading-animation"></div>
-            <p>Loading...</p>
-        </div>
-        <div class="details">
-            <img id="profile-photo" src="" alt="Profile Photo" width="100">
-            <p id="first-name"></p>
-            <p id="last-name"></p>
-            <p id="user-id"></p>
-            <p id="dc-id"></p>
-            <p id="username-detail"></p>
-            <p id="last-seen"></p>
-            <p id="joined-date"></p>
-        </div>
+        <header>
+            <div class="time">1:07</div>
+            <div class="icons">
+                <span class="icon">&#128222;</span>
+                <span class="icon">&#128640;</span>
+                <span class="icon">&#128248;</span>
+            </div>
+            <div class="battery">85%</div>
+        </header>
+        <main>
+            <h1>Receive</h1>
+            <div class="notice">
+                <p>Only send <span class="ton-highlight">TON (TON)</span> network assets to this address. Other assets will be lost forever.</p>
+            </div>
+            <div class="qr-code">
+                <img src="your-qr-code-image.png" alt="QR Code">
+                <p>EQCIdIG9jBh...PtXchqv</p>
+                <p class="memo">No memo required</p>
+            </div>
+            <div class="amount">
+                <span>100 TON ≈ $731.99</span>
+                <button class="close">✖</button>
+            </div>
+            <div class="actions">
+                <button class="copy">Copy</button>
+                <button class="set-amount">Set Amount</button>
+                <button class="share">Share</button>
+            </div>
+        </main>
     </div>
-
-    <script>
-        function fetchUserDetails() {
-            const username = document.getElementById('username').value;
-            if (username) {
-                document.querySelector('.loading').style.display = 'block';
-                document.querySelector('.details').style.display = 'none';
-
-                setTimeout(() => {
-                    // Mock user details (you would replace this with a real API call)
-                    const userDetails = {
-                        profile_photo: 'https://via.placeholder.com/100',
-                        first_name: 'John',
-                        last_name: 'Doe',
-                        user_id: '123456789',
-                        dc_id: '2',
-                        username: username,
-                        last_seen: '2024-07-18 10:00:00',
-                        joined_date: '2020-01-01'
-                    };
-
-                    document.getElementById('profile-photo').src = userDetails.profile_photo;
-                    document.getElementById('first-name').innerText = `First Name: ${userDetails.first_name}`;
-                    document.getElementById('last-name').innerText = `Last Name: ${userDetails.last_name}`;
-                    document.getElementById('user-id').innerText = `User ID: ${userDetails.user_id}`;
-                    document.getElementById('dc-id').innerText = `DC ID: ${userDetails.dc_id}`;
-                    document.getElementById('username-detail').innerText = `Username: ${userDetails.username}`;
-                    document.getElementById('last-seen').innerText = `Last Seen: ${userDetails.last_seen}`;
-                    document.getElementById('joined-date').innerText = `Joined Telegram: ${userDetails.joined_date}`;
-
-                    document.querySelector('.loading').style.display = 'none';
-                    document.querySelector('.details').style.display = 'block';
-                }, 3000);
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
