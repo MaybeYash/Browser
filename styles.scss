@@ -1,0 +1,97 @@
+$background-color: #111;
+$text-color: #fff;
+$highlight-color: #ffd700;
+$container-width: 300px;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: $container-width;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    padding: 0 10px;
+    .time, .battery {
+        color: lighten($text-color, 20%);
+    }
+    .icons {
+        .icon {
+            margin: 0 2px;
+        }
+    }
+}
+
+main {
+    background-color: darken($background-color, 10%);
+    padding: 20px;
+    border-radius: 10px;
+
+    .notice {
+        background-color: darken($background-color, 20%);
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+
+        .ton-highlight {
+            color: $highlight-color;
+        }
+    }
+
+    .qr-code {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .amount {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .close {
+            background: none;
+            border: none;
+            color: $text-color;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            background-color: darken($background-color, 20%);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            color: $text-color;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($background-color, 10%);
+            }
+        }
+    }
+}
