@@ -1,93 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background-color: #121212;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-    width: 300px;
-    text-align: center;
+  text-align: center;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    padding: 0 10px;
+.warning {
+  background-color: #3a3a3a;
+  color: #ffd700;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-header .time,
-header .battery {
-    color: #ccc;
+.qr-code-container {
+  margin: 20px 0;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.qr-code-container .security-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 5px;
+  border-radius: 50%;
 }
 
-header .icons .icon {
-    margin: 0 2px;
+.amount-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
-
-main {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.notice {
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.ton-highlight {
-    color: #ffd700;
-}
-
-.qr-code {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.qr-code img {
-    width: 100%;
+.amount-container input {
+  width: 100px;
+  padding: 5px;
+  margin-right: 10px;
 }
 
 .amount {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  margin-top: 10px;
 }
 
-.amount .close {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.2em;
-    cursor: pointer;
+.buttons {
+  margin-top: 20px;
 }
-
-.actions {
-    display: flex;
-    justify-content: space-around;
-}
-
-.actions button {
-    background-color: #444;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.actions button:hover {
-    background-color: #555;
+.buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
 }
