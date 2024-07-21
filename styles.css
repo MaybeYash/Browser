@@ -1,63 +1,63 @@
 body {
-  background-color: #121212;
-  color: white;
   font-family: Arial, sans-serif;
+  background: #ecf0f1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
+}
+
+nav {
+  width: 100%;
+  background: #3498db;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-logo {
+  height: 50px;
 }
 
 .container {
   text-align: center;
 }
 
-.warning {
-  background-color: #3a3a3a;
-  color: #ffd700;
-  padding: 10px;
+.input-box {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.input-box input {
+  padding: 0.5rem;
+  border: 2px solid #3498db;
   border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.qr-code-container {
-  margin: 20px 0;
-  position: relative;
+  margin-right: 0.5rem;
   width: 200px;
-  height: 200px;
 }
-.qr-code-container .security-badge {
+
+.input-box button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #2ecc71;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#qrCodeContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.qr-logo {
   position: absolute;
-  top: 50%;
+  bottom: -50px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 5px;
-  border-radius: 50%;
-}
-
-.amount-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
-.amount-container input {
-  width: 100px;
-  padding: 5px;
-  margin-right: 10px;
-}
-
-.amount {
-  margin-top: 10px;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-.buttons button {
-  padding: 10px 20px;
-  margin: 0 10px;
+  transform: translateX(-50%);
+  height: 50px;
 }
