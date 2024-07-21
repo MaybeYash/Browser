@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receive TON</title>
+    <title>QR Code Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav>
+        <img src="cute-logo.png" alt="Cute Logo" class="navbar-logo">
+    </nav>
     <div class="container">
-        <div class="warning">
-            Only send TON (TON) network assets to this address. Other assets will be lost forever.
+        <div class="input-box">
+            <input type="text" id="dataInput" placeholder="Enter data here">
+            <button onclick="generateQRCode()">Generate QR Code</button>
         </div>
-        <div class="qr-code-container">
-            <div id="qr-code"></div>
-            <div class="security-badge">🔒</div>
-        </div>
-        <div class="amount-container">
-            <input type="number" id="amount" placeholder="Enter Amount">
-            <button onclick="setAmount()">Set Amount</button>
-        </div>
-        <div class="amount" id="amount-display"></div>
-        <div class="buttons">
-            <button onclick="copyToClipboard()">Copy</button>
-            <button onclick="share()">Share</button>
+        <div id="qrCodeContainer">
+            <canvas id="qrCodeCanvas"></canvas>
+            <img src="cute-logo.png" alt="Cute Logo" class="qr-logo">
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcode"></script>
     <script src="script.js"></script>
 </body>
 </html>
