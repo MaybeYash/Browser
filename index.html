@@ -8,36 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="time">1:07</div>
-            <div class="icons">
-                <span class="icon">&#128222;</span>
-                <span class="icon">&#128640;</span>
-                <span class="icon">&#128248;</span>
-            </div>
-            <div class="battery">85%</div>
-        </header>
-        <main>
-            <h1>Receive</h1>
-            <div class="notice">
-                <p>Only send <span class="ton-highlight">TON (TON)</span> network assets to this address. Other assets will be lost forever.</p>
-            </div>
-            <div class="qr-code">
-                <img src="your-qr-code-image.png" alt="QR Code">
-                <p>EQCIdIG9jBh...PtXchqv</p>
-                <p class="memo">No memo required</p>
-            </div>
-            <div class="amount">
-                <span>100 TON ≈ $731.99</span>
-                <button class="close">✖</button>
-            </div>
-            <div class="actions">
-                <button class="copy">Copy</button>
-                <button class="set-amount">Set Amount</button>
-                <button class="share">Share</button>
-            </div>
-        </main>
+        <div class="warning">
+            Only send TON (TON) network assets to this address. Other assets will be lost forever.
+        </div>
+        <div class="qr-code-container">
+            <div id="qr-code"></div>
+            <div class="security-badge">🔒</div>
+        </div>
+        <div class="amount-container">
+            <input type="number" id="amount" placeholder="Enter Amount">
+            <button onclick="setAmount()">Set Amount</button>
+        </div>
+        <div class="amount" id="amount-display"></div>
+        <div class="buttons">
+            <button onclick="copyToClipboard()">Copy</button>
+            <button onclick="share()">Share</button>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode"></script>
     <script src="script.js"></script>
 </body>
 </html>
